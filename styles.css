@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hepta Slab', serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Major Mono Display', monospace;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --SearchBarColor: #fff;
+    
+
+    --SearchBarTextColor: #000;
+    /*Sakura Light and dark themes*/
+    
+
+    --DaysForecastColor: #fff;
+    
+
+    --DaysForcatsTextColor: #000;
+    --mainContentBgc: #fff;
+
+    --DaysForecastBorderColor: pink;
+    --BottomCreditsColor: pink;
+    --BottomCreditsFOntColor: black;
+    --OtherDivsColor: pink;
+    --DailyPredFOntColor: black;
+
+    /*Set up transition animation between theme switching*/
+    --transitionDuration: 0.5s;
+    --transitionTimingFunction: ease-in-out;
+}
+
+.dark{
+    --SearchBarColor:  #333;
+    --SearchBarTextColor: #fff;
+    --DaysForecastColor: #000;
+    --DaysForcatsTextColor: #fff;
+    --DaysForecastBorderColor: #fff;
+    --mainContentBgc: #000;
+    /*Slightly lighter color for bottom credits to match with dark body*/
+    --BottomCreditsColor: #333;
+    --BottomCreditsFOntColor: #fff;
+    --OtherDivsColor: #333;
+    --DailyPredFOntColor: #fff;
+
+    /*Animate switching themes*/
+    
+
+}
+
+.mainContent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 105vh;
+    width: 100vw;
+    /*blur everything out when the spinner is loading*/
+    background-color: var(--mainContentBgc);
+    /*filter: blur(80px);*/
+    transition: background-color var(--transitionDuration) var(--transitionTimingFunction);
+}
+.topNav{
+    width: 100%;
+    height: 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 16px ;
+    z-index: 1000; 
+    border-bottom: 2px solid black;
+    background-color: var(--SearchBarColor);
+    color: var(--SearchBarTextColor);
+    transition: background-color var(--transitionDuration) var(--transitionTimingFunction);
+
+
+}
+.SearchBar > input {
+    width: 30vw;
+    height: 3vh;
+    padding: 12px;
+}
+.SearchBar {
+    position: relative;
+}
+.SearchBar > img{
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.logo > img{
+    transform: scale(0.7);
+}
+.WeatherStats{
+    width: 100%;
+    height: 91%;
+    padding: 1rem 2rem;
+}
+.Themes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    margin-left: 8px;
+}
+.TempScale{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.bottomCredits{
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--BottomCreditsColor);
+    padding: 1%;
+    font-size: 1.2rem;
+    color: var(--BottomCreditsFOntColor);
+
+}
+.WeatherStats{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.picTemp{
+    grid-row: 1/4;
+}
+.googleMapEmbed{
+    grid-row: 1/3;
+}
+.DailyPred{
+    grid-row: 4/5;
+}
+.tempGraph{
+    grid-row: 3/5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+.tempGraph > canvas{
+    width: 100%;
+    height: 100%;
+   
+    
+}
+#temp{
+    padding: 8px;
+}
+.DailyPred{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+    background-color: var(--DaysForecastColor);
+    color: var(--DailyPredFOntColor);
+}
+.DailyPred > .divTitle{
+    margin-bottom: 12px;
+    
+}
+.Days{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background-color: var(--DaysForecastColor);
+    height: 88%;
+    color: var(--DailyPredFOntColor);
+}
+.temp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.picTemp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    color: whitesmoke;
+}
+.state{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 2rem;
+}
+.Days > div{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--DaysForecastColor);
+    border: 2px solid var(--DaysForecastBorderColor);
+    gap:8px;
+}
+.location{
+    justify-self: start;
+
+    position: absolute;
+    top: 10%;
+    left: 4 rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.DailyPred{
+    background-color: var(--OtherDivsColor);
+    border-radius: 10px;
+}
+.Days{
+    
+    border-radius: 10px;
+}
+.tempGraph{
+    border-radius: 10px;
+    background-color: var(--OtherDivsColor);
+}
+.googleMapEmbed{
+    border-radius: 15px;
+}
+.googleMapEmbed > iframe{
+    border-radius: 15px;
+}
+
+.TempScale > * {
+    cursor: pointer;
+
+}
+
+
+
+/*Spinner*/
+
+
+.dot-spinner {
+    --uib-size: 2.8rem;
+    --uib-speed: .9s;
+    --uib-color: pink;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: var(--uib-size);
+    width: var(--uib-size);
+  }
+  
+  .dot-spinner__dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .dot-spinner__dot::before {
+    content: '';
+    height: 20%;
+    width: 20%;
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    transform: scale(0);
+    opacity: 0.5;
+    animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+  }
+  
+  .dot-spinner__dot:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  
+  .dot-spinner__dot:nth-child(2)::before {
+    animation-delay: calc(var(--uib-speed) * -0.875);
+  }
+  
+  .dot-spinner__dot:nth-child(3) {
+    transform: rotate(90deg);
+  }
+  
+  .dot-spinner__dot:nth-child(3)::before {
+    animation-delay: calc(var(--uib-speed) * -0.75);
+  }
+  
+  .dot-spinner__dot:nth-child(4) {
+    transform: rotate(135deg);
+  }
+  
+  .dot-spinner__dot:nth-child(4)::before {
+    animation-delay: calc(var(--uib-speed) * -0.625);
+  }
+  
+  .dot-spinner__dot:nth-child(5) {
+    transform: rotate(180deg);
+  }
+  
+  .dot-spinner__dot:nth-child(5)::before {
+    animation-delay: calc(var(--uib-speed) * -0.5);
+  }
+  
+  .dot-spinner__dot:nth-child(6) {
+    transform: rotate(225deg);
+  }
+  
+  .dot-spinner__dot:nth-child(6)::before {
+    animation-delay: calc(var(--uib-speed) * -0.375);
+  }
+  
+  .dot-spinner__dot:nth-child(7) {
+    transform: rotate(270deg);
+  }
+  
+  .dot-spinner__dot:nth-child(7)::before {
+    animation-delay: calc(var(--uib-speed) * -0.25);
+  }
+  
+  .dot-spinner__dot:nth-child(8) {
+    transform: rotate(315deg);
+  }
+  
+  .dot-spinner__dot:nth-child(8)::before {
+    animation-delay: calc(var(--uib-speed) * -0.125);
+  }
+  
+  @keyframes pulse0112 {
+    0%,
+    100% {
+      transform: scale(0);
+      opacity: 0.5;
+    }
+  
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+.SpinnerDiv{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 10%;
+    height: 10%;
+    position: absolute;
+
+    /*Making it slide from the top when loading*/
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    padding: 16px;
+
+    background-color: black;
+    border-radius: 12px;
+    color: #fff;
+    gap: 16px;
+    visibility: hidden;
+
+}
+.dark{
+    cursor: pointer;
+}

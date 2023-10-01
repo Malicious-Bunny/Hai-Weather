@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="weather-haze-48-regular.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@300&family=Josefin+Sans&family=Major+Mono+Display&family=Montserrat:wght@800&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <title>Hai-Weather: Say hello to weather updates</title>
+</head>
+<body>
+    <div class="mainContent">
+        <div class="topNav">
+            <div class="logo">
+                <img src="./weather-haze-48-regular.svg" alt="Hai-Weather">
+                <span class="Name">Hai-Weather</span>
+            </div>
+            <div class="SearchBar">
+        
+                <!--Search Icon embedded in search bar-->
+        
+        
+                <input type="text" placeholder="Search for a city">
+                <img src="search-fill.svg" alt="search" srcset="">
+        
+            </div>
+            <div class="TempScale">
+                <span class="celcius">C</span>
+                <span class="Farhen">F</span>
+            </div>
+        
+            <div class="Themes">
+                <span class="theme">Themes: </span>
+                <span class="dark">Sakura-Dark</span>
+            </div>
+        </div>
+
+        <div class="WeatherStats">
+            <div class="picTemp">
+                <div class="location">
+                    <img src="./location-bold (1).svg" alt="">
+                    <span class="locationName"></span>
+                </div>
+                <div class="picTempStat">
+                    
+                    <div class="temp">
+                        <span class="tempVal"></span>
+                        <div class="state">
+                            <img  class="stateImg"  alt="">
+                            <span class="stateText">Fog</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="DailyPred">
+                <div class="divTitle">
+                    Daily Forecast
+                </div>
+                <div class="Days">
+                 <div class="day1">
+                    <img src="" alt="" class="DayImg1">
+                    <div class="DayName1">
+
+                    </div>
+                  
+                </div>
+                <div class="day2">
+                    <img src="" alt="" class="DayImg2">
+                    <div class="DayName2">
+
+                    </div>
+                    
+                </div>
+                <div class="day3">
+                    <img src="" alt="" class="DayImg3">
+                    <div class="DayName3">
+
+                    </div>
+                    
+                </div>
+                <div class="day4">
+                    <img src="" alt="" class="DayImg4">
+                    <div class="DayName4">
+
+                    </div>
+                   
+                </div>
+                <div class="day5">
+                    
+                   <img  alt="" class="DayImg5">
+                   <div class="DayName5">
+                    
+            </div>
+                </div>
+            </div>
+            </div>
+            <div class="tempGraph">
+                <canvas id="temp">
+
+                </canvas>
+            </div>
+<div class="googleMapEmbed" >     
+    <div class="s" style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:100%;height:100%;"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Vatican&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="the-googlemap-enabler" href="https://www.bootstrapskins.com/themes" id="make-map-data">premium bootstrap themes</a><style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div>
+
+</div>
+        </div>
+        <div class="bottomCredits">
+            Made By: Malicious Bunny
+        </div>
+
+    </div>
+
+    <div class="SpinnerDiv">
+        <div class="dot-spinner">
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+        </div>
+
+        <span>Loading...</span>
+    </div>
+
+
+
+     <script src="main.js"></script>
+</body>
+</html>
